@@ -13,7 +13,8 @@ EXPOSE 3000
 CMD [ "npm", "start" ]
 
 
-FROM node:14.9 AS builder
+FROM node:14-alpine AS builder
+ENV NODE_ENV production
 # Add a work directory
 WORKDIR /usr/src/app
 # Cache and Install dependencies
@@ -26,6 +27,7 @@ RUN npm run build
 
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine AS production
+ENV NODE_ENV production
 # Copy built assets from builder
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 # Add your nginx.conf
