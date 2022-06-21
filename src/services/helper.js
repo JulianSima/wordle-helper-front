@@ -1,7 +1,7 @@
 import axios from 'axios'
 import authService from "./auth"; 
 
-const baseUrl = 'http://localhost:8080/v1/helper'
+const baseUrl = '/helper'
 
 const searchPossibleWords = (language, grid, attempts) => {
     const greyLetters = []

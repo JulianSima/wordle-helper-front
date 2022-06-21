@@ -20,6 +20,9 @@ import CreateTournament from './CreateTournament';
 import SubmitResults from './SubmitResults';
 import MyTournaments from './MyTournaments';
 import Helper from './Helper';
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={customTheme}>
