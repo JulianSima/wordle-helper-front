@@ -1,8 +1,8 @@
 import axios from 'axios'
 import authService from "./auth"; 
 
-const baseUrl = 'http://localhost:8080/v1/tournaments'
-const usersUrl = 'http://localhost:8080/v1/users'
+const baseUrl = '/tournaments'
+const usersUrl = '/users'
 
 const getAllPublicTournaments = () => {
     const request = axios.get(baseUrl, {
